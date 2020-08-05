@@ -13,21 +13,25 @@ import Combine
 
 class ParticleAuth: ObservableObject {
     
+    ///True if the signin process is currently in progress
     var signingIn: Bool = false {
         didSet {
             self.objectWillChange.send()
         }
     }
+    ///True if authorization is still initializing; false when intialization has completed
     var initializing: Bool = true {
         didSet {
             self.objectWillChange.send()
         }
     }
+    ///True if the particle user is logged in
     var loggedIn: Bool = false {
         didSet {
             self.objectWillChange.send()
         }
     }
+    ///True if there are particle credentials saved
     var credentialsSaved: Bool = false {
         didSet {
             self.objectWillChange.send()
@@ -43,7 +47,8 @@ class ParticleAuth: ObservableObject {
         }
     }
     
-    /**Sign into the ParticleCloud using the given `username` and `password`
+    /**
+     Sign into the ParticleCloud using the given `username` and `password`
      ```
      signInToParticleCloud("username", "password", saveInfo: false)
      ```
@@ -84,7 +89,8 @@ class ParticleAuth: ObservableObject {
         }.resume()
     }
 
-    /**Sign into the ParticleCloud using the saved credentials
+    /**
+     Sign into the ParticleCloud using the saved credentials
     ```
     signInToParticleCloud()
     ```
@@ -100,7 +106,8 @@ class ParticleAuth: ObservableObject {
         }
     }
 
-    /**Check if there are stored credentials for the Particle Cloud
+    /**
+     Check if there are stored credentials for the Particle Cloud
      ```
      if (particleCredentialsStored()) {
         print("Particle credentials exist!")
@@ -116,30 +123,5 @@ class ParticleAuth: ObservableObject {
             return false
         }
         return true
-    }
-}
-
-
-/**
- 
- */
-func getDeviceByName(_ name: String, completionHandler: @escaping (ParticleDevice?, Error?) -> Void) -> Void {
-    ParticleCloud.sharedInstance().getDevices { (devices:[ParticleDevice]?, error:Error?) -> Void in
-        if let _ = error {
-            completionHandler(nil, error)
-        }
-        else {
-            if let d = devices {
-                for device in d {
-                    if device.name == name {
-                        completionHandler(device, nil)
-                        return
-                    }
-                }
-            }
-            else {
-                completionHandler(nil, ParticleError.deviceNotFound("Could not find device with name \(name)"))
-            }
-        }
     }
 }

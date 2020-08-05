@@ -9,22 +9,20 @@
 import SwiftUI
 
 extension Color {
-    static let white = Color.white
-    static let black = Color.black
 
     static func backgroundColor(for colorScheme: ColorScheme) -> Color {
         if colorScheme == .dark {
-            return black
+            return Color.black
         } else {
-            return white
+            return Color.white
         }
     }
     
     static func foregroundColor(for colorScheme: ColorScheme) -> Color {
         if colorScheme == .dark {
-            return white
+            return Color.white
         } else {
-            return black
+            return Color.black
         }
     }
 }
