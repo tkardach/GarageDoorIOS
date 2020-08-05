@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19F4158EF2A6FC1DC51159FD /* Pods_GarageDoorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31EF6613F05F95943692E0F2 /* Pods_GarageDoorTests.framework */; };
+		3035326E985BC51FEB64258B /* Pods_GarageDoor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F2E08D3E8C1821E2F1292F0 /* Pods_GarageDoor.framework */; };
+		654344CA24D9F6CB001F34D4 /* GarageDoorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654344C924D9F6CB001F34D4 /* GarageDoorService.swift */; };
+		654344CD24D9FEFF001F34D4 /* GarageDoorProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654344CC24D9FEFF001F34D4 /* GarageDoorProtocols.swift */; };
 		65EA050E24D9BFCD00D6812F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EA050D24D9BFCD00D6812F /* AppDelegate.swift */; };
 		65EA051024D9BFCD00D6812F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EA050F24D9BFCD00D6812F /* SceneDelegate.swift */; };
 		65EA051224D9BFCD00D6812F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EA051124D9BFCD00D6812F /* ContentView.swift */; };
@@ -17,9 +21,7 @@
 		65EA053024D9BFCF00D6812F /* GarageDoorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EA052F24D9BFCF00D6812F /* GarageDoorUITests.swift */; };
 		65EA054024D9C1EF00D6812F /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EA053F24D9C1EF00D6812F /* Particle.swift */; };
 		65EA054324D9C23300D6812F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65EA054224D9C23300D6812F /* Constants.swift */; };
-		C9F812248DD53A4313D327DA /* Pods_GarageDoor_GarageDoorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA5BD7623FE207D3955888A /* Pods_GarageDoor_GarageDoorUITests.framework */; };
-		D570B16FC0EC1E548588A7CA /* Pods_GarageDoor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04695D9B700B05C5ED3101C3 /* Pods_GarageDoor.framework */; };
-		D5DE8CB7C1BEC478DBBBAFF5 /* Pods_GarageDoorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A8E279D83E6A23881C255DC /* Pods_GarageDoorTests.framework */; };
+		BF6A8BFFECA44D554607B2F6 /* Pods_GarageDoor_GarageDoorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4B26A67B95560DB8E909C62 /* Pods_GarageDoor_GarageDoorUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04695D9B700B05C5ED3101C3 /* Pods_GarageDoor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageDoor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0765753609875DCDC9FA0547 /* Pods-GarageDoor-GarageDoorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoor-GarageDoorUITests.release.xcconfig"; path = "Target Support Files/Pods-GarageDoor-GarageDoorUITests/Pods-GarageDoor-GarageDoorUITests.release.xcconfig"; sourceTree = "<group>"; };
-		0BA5BD7623FE207D3955888A /* Pods_GarageDoor_GarageDoorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageDoor_GarageDoorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31EF6613F05F95943692E0F2 /* Pods_GarageDoorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageDoorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E329AF5412AF6AD66F62CA /* Pods-GarageDoor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoor.debug.xcconfig"; path = "Target Support Files/Pods-GarageDoor/Pods-GarageDoor.debug.xcconfig"; sourceTree = "<group>"; };
-		5A8E279D83E6A23881C255DC /* Pods_GarageDoorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageDoorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		654344C924D9F6CB001F34D4 /* GarageDoorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoorService.swift; sourceTree = "<group>"; };
+		654344CC24D9FEFF001F34D4 /* GarageDoorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoorProtocols.swift; sourceTree = "<group>"; };
 		65EA050A24D9BFCD00D6812F /* GarageDoor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarageDoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65EA050D24D9BFCD00D6812F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65EA050F24D9BFCD00D6812F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +64,12 @@
 		65EA053D24D9C07100D6812F /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
 		65EA053F24D9C1EF00D6812F /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
 		65EA054224D9C23300D6812F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6F2E08D3E8C1821E2F1292F0 /* Pods_GarageDoor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageDoor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7456868647BFF0AA4C259484 /* Pods-GarageDoorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoorTests.debug.xcconfig"; path = "Target Support Files/Pods-GarageDoorTests/Pods-GarageDoorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		92F1EC4E5D4B1CF516ABE743 /* Pods-GarageDoor-GarageDoorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoor-GarageDoorUITests.debug.xcconfig"; path = "Target Support Files/Pods-GarageDoor-GarageDoorUITests/Pods-GarageDoor-GarageDoorUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ADE52403A1EC2BF34B16730F /* Pods-GarageDoor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoor.release.xcconfig"; path = "Target Support Files/Pods-GarageDoor/Pods-GarageDoor.release.xcconfig"; sourceTree = "<group>"; };
 		D1B071C39204A6B4363445A5 /* Pods-GarageDoorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoorTests.release.xcconfig"; path = "Target Support Files/Pods-GarageDoorTests/Pods-GarageDoorTests.release.xcconfig"; sourceTree = "<group>"; };
+		D4B26A67B95560DB8E909C62 /* Pods_GarageDoor_GarageDoorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageDoor_GarageDoorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D570B16FC0EC1E548588A7CA /* Pods_GarageDoor.framework in Frameworks */,
+				3035326E985BC51FEB64258B /* Pods_GarageDoor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DE8CB7C1BEC478DBBBAFF5 /* Pods_GarageDoorTests.framework in Frameworks */,
+				19F4158EF2A6FC1DC51159FD /* Pods_GarageDoorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,21 +93,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9F812248DD53A4313D327DA /* Pods_GarageDoor_GarageDoorUITests.framework in Frameworks */,
+				BF6A8BFFECA44D554607B2F6 /* Pods_GarageDoor_GarageDoorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30B713BEF7A4D4E60565FEB9 /* Frameworks */ = {
+		654344C824D9F6AD001F34D4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				04695D9B700B05C5ED3101C3 /* Pods_GarageDoor.framework */,
-				0BA5BD7623FE207D3955888A /* Pods_GarageDoor_GarageDoorUITests.framework */,
-				5A8E279D83E6A23881C255DC /* Pods_GarageDoorTests.framework */,
+				654344C924D9F6CB001F34D4 /* GarageDoorService.swift */,
 			);
-			name = Frameworks;
+			name = Services;
+			sourceTree = "<group>";
+		};
+		654344CB24D9FEED001F34D4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				654344CC24D9FEFF001F34D4 /* GarageDoorProtocols.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		65D3009F24D9CA5C00D1BEEC /* Models */ = {
@@ -130,7 +140,7 @@
 				65EA052E24D9BFCF00D6812F /* GarageDoorUITests */,
 				65EA050B24D9BFCD00D6812F /* Products */,
 				A021A10AAD38A30C2F501D50 /* Pods */,
-				30B713BEF7A4D4E60565FEB9 /* Frameworks */,
+				9B68366D10AD0EBDDB91F4EB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +157,8 @@
 		65EA050C24D9BFCD00D6812F /* GarageDoor */ = {
 			isa = PBXGroup;
 			children = (
+				654344CB24D9FEED001F34D4 /* Protocols */,
+				654344C824D9F6AD001F34D4 /* Services */,
 				65D300A024D9CA6500D1BEEC /* Shared */,
 				65D3009F24D9CA5C00D1BEEC /* Models */,
 				65EA050D24D9BFCD00D6812F /* AppDelegate.swift */,
@@ -185,6 +197,16 @@
 				65EA053124D9BFCF00D6812F /* Info.plist */,
 			);
 			path = GarageDoorUITests;
+			sourceTree = "<group>";
+		};
+		9B68366D10AD0EBDDB91F4EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F2E08D3E8C1821E2F1292F0 /* Pods_GarageDoor.framework */,
+				D4B26A67B95560DB8E909C62 /* Pods_GarageDoor_GarageDoorUITests.framework */,
+				31EF6613F05F95943692E0F2 /* Pods_GarageDoorTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A021A10AAD38A30C2F501D50 /* Pods */ = {
@@ -444,6 +466,8 @@
 				65EA054024D9C1EF00D6812F /* Particle.swift in Sources */,
 				65EA051024D9BFCD00D6812F /* SceneDelegate.swift in Sources */,
 				65EA051224D9BFCD00D6812F /* ContentView.swift in Sources */,
+				654344CA24D9F6CB001F34D4 /* GarageDoorService.swift in Sources */,
+				654344CD24D9FEFF001F34D4 /* GarageDoorProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +548,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Myself;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -545,6 +571,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = GarageDoor;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OBJC_BRIDGING_HEADER = GarageDoor/BridgingHeader.h;
@@ -586,7 +613,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Myself;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -600,7 +629,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_MODULE_NAME = GarageDoor;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OBJC_BRIDGING_HEADER = GarageDoor/BridgingHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
