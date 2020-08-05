@@ -11,22 +11,7 @@ import SwiftUI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    var auth: ParticleAuth?
-    var timer: Timer!
 
-    @objc
-    func initialize() {
-        if !auth!.initializing {
-            timer.invalidate()
-        }
-    }
-    
-    override init() {
-        super.init()
-        self.auth = ParticleAuth()
-        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.initialize), userInfo: nil, repeats: true)
-        usleep(500000)
-    }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -35,7 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Create the SwiftUI view that provides the window contents.
         
-        let contentView = ContentView().environmentObject(self.auth!)
+        let auth = ParticleAuth()
+        let contentView = ContentView().environmentObject(auth)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

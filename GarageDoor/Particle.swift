@@ -17,7 +17,18 @@ class ParticleAuth: ObservableObject {
     // required to conform to protocol 'ObservableObject'
     let willChange = PassthroughSubject<ParticleAuth,Never>()
     
-    var initializing: Bool
+    var signingIn: Bool = false {
+        didSet {
+            self.objectWillChange.send()
+            self.didChange.send(self)
+        }
+    }
+    var initializing: Bool = true {
+        didSet {
+            self.objectWillChange.send()
+            self.didChange.send(self)
+        }
+    }
     var loggedIn: Bool = false {
         didSet {
             self.objectWillChange.send()
@@ -34,7 +45,7 @@ class ParticleAuth: ObservableObject {
     init() {
         self.initializing = true
         if particleCredentialsStored() {
-            signInToParticleCloud(initializing: true)
+            signInToParticleCloud()
         } else {
             self.initializing = false
         }
@@ -50,7 +61,8 @@ class ParticleAuth: ObservableObject {
      - Parameter saveInfo: If true, save credentials to be used later
      - Returns: true if the login was successful, false otherwise
      */
-    func signInToParticleCloud(_ username: String, _ password: String, saveInfo: Bool = true, initializing: Bool = false) -> Void {
+    func signInToParticleCloud(_ username: String, _ password: String, saveInfo: Bool = true, completion: ((Error?) -> Void)? = nil) -> Void {
+        self.signingIn = true
         ParticleCloud.sharedInstance().login(withUser: username, password: password) { (error:Error?) -> Void in
             if let _ = error {
                 self.loggedIn = false
@@ -71,8 +83,11 @@ class ParticleAuth: ObservableObject {
                 }
             }
             
-            if initializing {
-                self.initializing = false
+            self.initializing = false
+            self.signingIn = false
+            
+            if completion != nil {
+                completion!(error)
             }
         }.resume()
     }
@@ -84,12 +99,12 @@ class ParticleAuth: ObservableObject {
     - Throws: `ParticleError.credentialSaveError` if credentials failed to save
     - Returns: true if the login was successful, false otherwise
     */
-    func signInToParticleCloud(initializing: Bool = false) -> Void {
+    func signInToParticleCloud() -> Void {
         let username: String? = KeychainWrapper.standard.string(forKey: Particle.usernameKey)
         let password: String? = KeychainWrapper.standard.string(forKey: Particle.passwordKey)
         
         if username != nil && password != nil {
-            self.signInToParticleCloud(username!, password!, saveInfo: false, initializing: initializing)
+            self.signInToParticleCloud(username!, password!, saveInfo: false)
         }
     }
 
