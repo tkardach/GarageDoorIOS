@@ -12,33 +12,25 @@ import Combine
 
 
 class ParticleAuth: ObservableObject {
-    let didChange = PassthroughSubject<ParticleAuth,Never>()
-
-    // required to conform to protocol 'ObservableObject'
-    let willChange = PassthroughSubject<ParticleAuth,Never>()
     
     var signingIn: Bool = false {
         didSet {
             self.objectWillChange.send()
-            self.didChange.send(self)
         }
     }
     var initializing: Bool = true {
         didSet {
             self.objectWillChange.send()
-            self.didChange.send(self)
         }
     }
     var loggedIn: Bool = false {
         didSet {
             self.objectWillChange.send()
-            self.didChange.send(self)
         }
     }
     var credentialsSaved: Bool = false {
         didSet {
             self.objectWillChange.send()
-            self.didChange.send(self)
         }
     }
     

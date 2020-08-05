@@ -7,16 +7,33 @@
 //
 
 import Foundation
+import Combine
 
-class GarageDoorService: IGarageDoorService {
+class GarageDoorService: ObservableObject, IGarageDoorService {
     var device: ParticleDevice?
     
+    var initializing: Bool = true {
+        didSet {
+            self.objectWillChange.send()
+        }
+    }
+    
+    var initialized: Bool = false {
+        didSet {
+            self.objectWillChange.send()
+        }
+    }
+    
     init() {
+        self.initializing = true
+        self.initialized = false
         self.device = nil
         getDeviceByName(Particle.garageDoorName, completionHandler: { (device: ParticleDevice?, error: Error?) in
             if device != nil {
                 self.device = device
             }
+            self.initializing = false
+            self.initialized = true
         })
     }
     
@@ -31,7 +48,7 @@ class GarageDoorService: IGarageDoorService {
     
     /**Trigger the close garage door function
      */
-    func closeGarageDoor(completionHandler: @escaping (Error?) -> Void) throws -> Void {
+    func closeGarageDoor(completionHandler: @escaping (Error?) -> Void) -> Void {
         self.device!.callFunction(Particle.garageDoorClose, withArguments: nil) { (resultCode : NSNumber?, error : Error?) -> Void in
             completionHandler(error)
         }

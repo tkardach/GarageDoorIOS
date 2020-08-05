@@ -47,8 +47,8 @@ struct ContentView: View {
             return AnyView(LoginView().environmentObject(auth))
             .background(Color(UIColor.systemBackground))
         } else {
-            return AnyView(GarageButtonView(GarageDoorService()))
-            .background(Color(UIColor.systemBackground))
+            return AnyView(GarageButtonView().environmentObject(GarageDoorService()))
+                .background(Color(UIColor.systemBackground))
         }
     }
 }
@@ -159,65 +159,67 @@ struct LoginView: View {
 
 
 struct GarageButtonView: View {
-    var service: IGarageDoorService
-    let defaultIcon: String = "garage-door"
-    let pressedIcon: String = "garage-door-pressed"
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @EnvironmentObject var service: GarageDoorService
     
     @State private var pressed = false
     @State private var error: String = ""
-
-    init(_ service: IGarageDoorService) {
-        self.service = service
-    }
+    
+    let defaultIcon: String = "garage-door"
+    let pressedIcon: String = "garage-door-pressed"
     
     func openGarageDoor() -> Void {
-        do {
-            try self.service.openGarageDoor(completionHandler: { (error: Error?) -> Void in
-                if error != nil {
-                    self.error = error!.localizedDescription
-                }
-            })
-        } catch ParticleError.functionCallFailed {
-            self.error = "Open Garage Door function failed."
-        } catch GarageDoorError.serviceNotInitialized {
-            self.error = "Garage Door Service is not initialized"
-        } catch {
-            self.error = "Unknown error occured during open garage door"
-        }
+        self.service.openGarageDoor(completionHandler: { (error: Error?) -> Void in
+            if error != nil {
+                self.error = error!.localizedDescription
+            }
+        })
     }
     
     func closeGarageDoor() -> Void {
-        do {
-            try self.service.closeGarageDoor(completionHandler: { (error: Error?) -> Void in
-                if error != nil {
-                    self.error = error!.localizedDescription
-                }
-            })
-        } catch ParticleError.functionCallFailed {
-            self.error = "Close Garage Door function failed."
-        } catch GarageDoorError.serviceNotInitialized {
-           self.error = "Garage Door Service is not initialized"
-       } catch {
-            self.error = "Unknown error occured during close garage door"
-        }
+        self.service.closeGarageDoor(completionHandler: { (error: Error?) -> Void in
+            if error != nil {
+                self.error = error!.localizedDescription
+            }
+        })
     }
     
     var body: some View {
-        return VStack {
-            Image(self.pressed ? self.pressedIcon : self.defaultIcon)
-                .resizable()
-                .frame(width: 180.0, height: 180.0)
-                .onLongPressGesture(minimumDuration: .infinity, maximumDistance: .infinity, pressing: { pressing in
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        self.pressed = pressing
-                        if self.pressed {
-                            self.openGarageDoor()
-                        } else {
-                            self.closeGarageDoor()
-                        }
+        if service.initializing {
+            return AnyView(
+                VStack {
+                    ActivityIndicator()
+                      .frame(width: 50, height: 50)
                     }
-                }, perform: { })
-            Text(self.error)
+                    .foregroundColor(Color.foregroundColor(for: self.colorScheme)))
+        } else if service.initialized && service.device == nil {
+            return AnyView(
+                Text("Device was not initialized. You must have a GarageDoor particle device.")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .padding(.top, 20)
+                    .padding()
+                    .lineLimit(3)
+                    .foregroundColor(Color.foregroundColor(for: self.colorScheme)))
+        } else {
+            return AnyView(
+                VStack {
+                    Image(self.pressed ? self.pressedIcon : self.defaultIcon)
+                        .resizable()
+                        .frame(width: 180.0, height: 180.0)
+                        .onLongPressGesture(minimumDuration: .infinity, maximumDistance: .infinity, pressing: { pressing in
+                            withAnimation(.easeInOut(duration: 0.2)) {
+                                self.pressed = pressing
+                                if self.pressed {
+                                    self.openGarageDoor()
+                                } else {
+                                    self.closeGarageDoor()
+                                }
+                            }
+                        }, perform: { })
+                    Text(self.error)
+                }
+            )
         }
     }
 }

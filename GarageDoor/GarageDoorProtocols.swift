@@ -11,6 +11,6 @@ import Foundation
 protocol IGarageDoorService {
     var device: ParticleDevice? { get }
     
-    func openGarageDoor(completionHandler: @escaping  (Error?) -> Void) throws -> Void
-    func closeGarageDoor(completionHandler: @escaping  (Error?) -> Void) throws -> Void
+    func openGarageDoor(completionHandler: @escaping  (Error?) -> Void) -> Void
+    func closeGarageDoor(completionHandler: @escaping  (Error?) -> Void) -> Void
 }
