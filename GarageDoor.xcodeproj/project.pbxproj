@@ -44,6 +44,7 @@
 /* Begin PBXFileReference section */
 		0765753609875DCDC9FA0547 /* Pods-GarageDoor-GarageDoorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoor-GarageDoorUITests.release.xcconfig"; path = "Target Support Files/Pods-GarageDoor-GarageDoorUITests/Pods-GarageDoor-GarageDoorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		31EF6613F05F95943692E0F2 /* Pods_GarageDoorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GarageDoorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D968FD624DB47E400A41B38 /* GarageDoor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GarageDoor.entitlements; sourceTree = "<group>"; };
 		45E329AF5412AF6AD66F62CA /* Pods-GarageDoor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarageDoor.debug.xcconfig"; path = "Target Support Files/Pods-GarageDoor/Pods-GarageDoor.debug.xcconfig"; sourceTree = "<group>"; };
 		654344C924D9F6CB001F34D4 /* GarageDoorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoorService.swift; sourceTree = "<group>"; };
 		654344CC24D9FEFF001F34D4 /* GarageDoorProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarageDoorProtocols.swift; sourceTree = "<group>"; };
@@ -157,6 +158,7 @@
 		65EA050C24D9BFCD00D6812F /* GarageDoor */ = {
 			isa = PBXGroup;
 			children = (
+				3D968FD624DB47E400A41B38 /* GarageDoor.entitlements */,
 				654344CB24D9FEED001F34D4 /* Protocols */,
 				654344C824D9F6AD001F34D4 /* Services */,
 				65D300A024D9CA6500D1BEEC /* Shared */,
@@ -644,17 +646,18 @@
 			baseConfigurationReference = 45E329AF5412AF6AD66F62CA /* Pods-GarageDoor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GarageDoor/GarageDoor.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GarageDoor/Preview Content\"";
-				DEVELOPMENT_TEAM = NX8M46L997;
+				DEVELOPMENT_TEAM = NMC4QMEM2Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GarageDoor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.forkbeardlabs.garageDoor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forkbeardlabs.garageDoor1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -667,17 +670,18 @@
 			baseConfigurationReference = ADE52403A1EC2BF34B16730F /* Pods-GarageDoor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GarageDoor/GarageDoor.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GarageDoor/Preview Content\"";
-				DEVELOPMENT_TEAM = NX8M46L997;
+				DEVELOPMENT_TEAM = NMC4QMEM2Y;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = GarageDoor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.forkbeardlabs.garageDoor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forkbeardlabs.garageDoor1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
